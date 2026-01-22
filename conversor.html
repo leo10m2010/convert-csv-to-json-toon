@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Convertidor de datos CSV a JSON y formato TOON">
+    <title>CSV Converter — shadcn/ui style</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div>
+            <h1>CSV Data Converter</h1>
+            <p>Convierte datos institucionales de CSV a JSON y formato TOON.</p>
+        </div>
+        <div class="theme-selector">
+            <select class="theme-select" id="themeSelect" aria-label="Selector de tema">
+                <option value="system">Sistema</option>
+                <option value="light">Día</option>
+                <option value="dark">Noche</option>
+            </select>
+        </div>
+    </header>
+
+    <main>
+        <div class="card">
+            <div class="field-group">
+                <label for="csvInput">Contenido CSV</label>
+                <textarea 
+                    id="csvInput" 
+                    placeholder="nombre,fecha,ubicacion...&#10;UNMSM,1551,Lima, Perú...&#10;&#10;💡 También puedes arrastrar archivos aquí"
+                    aria-label="Área de texto para contenido CSV"
+                    class="drop-zone"
+                ></textarea>
+                <div class="drop-overlay" id="dropOverlay">
+                    <div class="drop-content">
+                        <span class="drop-icon">📁</span>
+                        <p>Suelta el archivo CSV aquí</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Configuración avanzada -->
+            <div class="advanced-config">
+                <div class="field-group">
+                    <label for="delimiter">Delimitador</label>
+                    <select id="delimiter" aria-label="Seleccionar delimitador">
+                        <option value=",">Coma (,)</option>
+                        <option value=";">Punto y coma (;)</option>
+                        <option value="\t">Tabulación (\t)</option>
+                        <option value="|">Pipe (|)</option>
+                    </select>
+                </div>
+                <div class="field-group">
+                    <label for="encoding">Codificación</label>
+                    <select id="encoding" aria-label="Seleccionar codificación">
+                        <option value="UTF-8">UTF-8</option>
+                        <option value="ISO-8859-1">ISO-8859-1</option>
+                        <option value="Windows-1252">Windows-1252</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="actions-bar">
+                <div class="btn-group">
+                    <label class="outline file-label" for="fileInput">
+                        Subir CSV
+                    </label>
+                    <input type="file" id="fileInput" accept=".csv,.txt" aria-label="Seleccionar archivo CSV">
+                    <button class="primary btn-convert">Convertir Datos</button>
+                </div>
+                <button class="outline btn-clear">Limpiar</button>
+            </div>
+
+            <!-- Barra de estadísticas -->
+            <div class="stats-bar" id="statsBar" style="display: none;">
+                <div class="stat-item">
+                    <span class="stat-label">Filas</span>
+                    <span class="stat-value" id="rowCount">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Columnas</span>
+                    <span class="stat-value" id="colCount">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Tamaño</span>
+                    <span class="stat-value" id="fileSize">0 KB</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="results-grid">
+            <div class="output-card">
+                <div class="output-header">
+                    <span>JSON Format</span>
+                    <div class="btn-group">
+                        <button class="ghost btn-copy-json">Copiar</button>
+                        <button class="ghost btn-download-json">Descargar</button>
+                    </div>
+                </div>
+                <pre id="jsonOutput" class="empty-text">Los resultados aparecerán aquí...</pre>
+            </div>
+
+            <div class="output-card">
+                <div class="output-header">
+                    <span>TOON Format</span>
+                    <div class="btn-group">
+                        <button class="ghost btn-copy-toon">Copiar</button>
+                        <button class="ghost btn-download-toon">Descargar</button>
+                    </div>
+                </div>
+                <pre id="toonOutput" class="empty-text">Los resultados aparecerán aquí...</pre>
+            </div>
+        </div>
+    </main>
+</div>
+
+<div id="toast"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

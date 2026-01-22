@@ -1,0 +1,20 @@
+[build]
+  # Directorio de publicación (donde están tus archivos HTML, CSS, JS)
+  publish = "."
+  
+  # Directorio de las funciones serverless
+  functions = "netlify/functions"
+
+# Configuración de redirecciones (opcional)
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
+# Headers para CORS
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Methods = "GET, POST, OPTIONS"
+    Access-Control-Allow-Headers = "Content-Type"
