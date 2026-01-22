@@ -19,7 +19,7 @@ Convertidor de datos CSV a JSON y formato TOON con interfaz moderna estilo shadc
 
 ```
 appfit/
-├── conversor.html              # Página principal
+├── index.html                  # Página principal ⭐
 ├── styles.css                  # Estilos
 ├── script.js                   # Lógica frontend
 ├── package.json                # Dependencias
@@ -36,10 +36,10 @@ appfit/
 
 ### Opción 1: Solo Frontend (Local)
 
-1. Abre `conversor.html` en tu navegador
+1. Abre `index.html` en tu navegador
 2. Pega tu CSV o arrastra un archivo
 3. Click en "Convertir Datos"
-4. ¡Listo!
+4. ¡Listo! (Abre la consola F12 para ver un mensaje bonito)
 
 ### Opción 2: Con API REST (Netlify)
 
@@ -209,7 +209,7 @@ MIT
 
 ## 👤 Autor
 
-Tu nombre aquí
+TATO - [GitHub](https://github.com/leo10m2010)
 
 ## 🤝 Contribuciones
 

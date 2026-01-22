@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Convertidor de datos CSV a JSON y formato TOON">
-    <title>CSV Converter — shadcn/ui style</title>
+    <title>CSV Data Converter — shadcn/ui style</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -118,6 +118,57 @@
 </div>
 
 <div id="toast"></div>
+
+<!-- Mensaje ASCII en consola -->
+<script>
+// ========================================
+// MENSAJE DE BIENVENIDA EN CONSOLA
+// ========================================
+(function() {
+    const asciiArt = `
+████████╗ █████╗ ████████╗ ██████╗ 
+╚══██╔══╝██╔══██╗╚══██╔══╝██╔═══██╗
+   ██║   ███████║   ██║   ██║   ██║
+   ██║   ██╔══██║   ██║   ██║   ██║
+   ██║   ██║  ██║   ██║   ╚██████╔╝
+   ╚═╝   ╚═╝  ╚═╝   ╚═╝    ╚═════╝ 
+`;
+
+    const styles = {
+        ascii: 'color: #3b82f6; font-weight: bold; font-size: 14px; font-family: monospace; line-height: 1.2;',
+        title: 'color: #10b981; font-weight: bold; font-size: 16px;',
+        subtitle: 'color: #6b7280; font-size: 12px;',
+        info: 'color: #8b5cf6; font-size: 12px;',
+        tip: 'color: #f59e0b; font-size: 11px; font-weight: bold;',
+        link: 'color: #3b82f6; font-size: 11px;',
+        heart: 'color: #ec4899; font-size: 14px; font-weight: bold;'
+    };
+
+    console.log('%c' + asciiArt, styles.ascii);
+    console.log('%c🚀 CSV Data Converter', styles.title);
+    console.log('%cConvertidor de CSV a JSON y TOON', styles.subtitle);
+    console.log('');
+    console.log('%c📦 Versión: 1.0.0', styles.info);
+    console.log('%c✨ Características:', styles.info);
+    console.log('   • Omite automáticamente la columna "id"');
+    console.log('   • Soporta drag & drop');
+    console.log('   • Tema claro/oscuro');
+    console.log('   • API REST con Netlify Functions');
+    console.log('');
+    console.log('%c💡 Tip: Abre las DevTools para ver mensajes de debug', styles.tip);
+    console.log('');
+    console.log('%c🔗 GitHub:', styles.link, 'https://github.com/leo10m2010/convert-csv-to-json-toon');
+    console.log('%c📚 Docs:', styles.link, 'README.md');
+    console.log('');
+    console.log('%c━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━', styles.ascii);
+    console.log('');
+
+    // Mensaje especial para curiosos
+    console.log('%c🕵️ ¿Buscando algo?', styles.heart);
+    console.log('%cEste proyecto está hecho con ❤️ y mucho café ☕ por TATO', 'color: #6b7280; font-style: italic;');
+    console.log('');
+})();
+</script>
 
 <script src="script.js"></script>
 
